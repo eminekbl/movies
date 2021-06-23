@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Button, Form } from "react-bootstrap";
 import { useHistory } from "react-router";
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
+
 
 import { get, put, remove } from "../api";
 
@@ -26,8 +29,24 @@ function Edit() {
     history.push(`/`);
   }
   async function handleDelete() {
-    await remove(id);
-    history.push(`/`);
+    confirmAlert({
+      title: 'Confirm to delete',
+      message: 'Are you sure to detele this movie',
+      buttons: [
+        {
+          label: 'Yes',
+          onClick: async() => {
+            await remove(id);
+            history.push(`/`);
+          }
+        },
+        {
+          label: 'No',
+          // onClick: () => alert('Click No')
+        }
+      ]
+    });
+  
   }
 
   return (
