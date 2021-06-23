@@ -4,7 +4,12 @@ body {
   font-weight: normal;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Quicksand", sans-serif;
   font-weight: normal;
 }
@@ -146,7 +151,7 @@ a:active {
 body {
   background: #052332;
   background: linear-gradient(125deg, #052332 16%, #052a3a 38%, #053748 60%, #054a5e 71%, #05657b 89%, #06819a 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#052332",endColorstr="#06819a",GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#052332", endColorstr="#06819a", GradientType=1);
   min-height: 100vh;
 }
 
@@ -202,7 +207,7 @@ body {
 .add-movie-modal .modal-content {
   background: #052332;
   background: linear-gradient(125deg, #052332 16%, #052a3a 38%, #053748 60%, #054a5e 71%, #05657b 89%, #06819a 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#052332",endColorstr="#06819a",GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#052332", endColorstr="#06819a", GradientType=1);
   color: white;
 }
 

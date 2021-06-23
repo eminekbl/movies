@@ -1,29 +1,34 @@
 .card-container {
-    
+
     @include aspect-ratio(3, 4);
-    .card-title{
+
+    .card-title {
         position: absolute;
         text-align: center;
         top: 0px;
-        width:100%;
-        background-color:rgba(108, 116, 158, 0.472);     
-    };
-    &:hover .card-title{
+        width: 100%;
+        background-color: rgba(108, 116, 158, 0.472);
+    }
+
+    ;
+
+    &:hover .card-title {
         font-weight: bold;
-        background-color:rgba(224, 227, 245, 0.788);  
-    } 
-    img{
-        height:100%;
+        background-color: rgba(224, 227, 245, 0.788);
+    }
+
+    img {
+        height: 100%;
     }
 }
 
-.add-movie-modal{
-    .modal-content{
-        background: rgb(5,35,50);
-    background: -moz-linear-gradient(125deg, rgba(5,35,50,1) 16%, rgba(5,42,58,1) 38%, rgba(5,55,72,1) 60%, rgba(5,74,94,1) 71%, rgba(5,101,123,1) 89%, rgba(6,129,154,1) 100%);
-    background: -webkit-linear-gradient(125deg, rgba(5,35,50,1) 16%, rgba(5,42,58,1) 38%, rgba(5,55,72,1) 60%, rgba(5,74,94,1) 71%, rgba(5,101,123,1) 89%, rgba(6,129,154,1) 100%);
-    background: linear-gradient(125deg, rgba(5,35,50,1) 16%, rgba(5,42,58,1) 38%, rgba(5,55,72,1) 60%, rgba(5,74,94,1) 71%, rgba(5,101,123,1) 89%, rgba(6,129,154,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#052332",endColorstr="#06819a",GradientType=1);
+.add-movie-modal {
+    .modal-content {
+        background: rgb(5, 35, 50);
+        background: -moz-linear-gradient(125deg, rgba(5, 35, 50, 1) 16%, rgba(5, 42, 58, 1) 38%, rgba(5, 55, 72, 1) 60%, rgba(5, 74, 94, 1) 71%, rgba(5, 101, 123, 1) 89%, rgba(6, 129, 154, 1) 100%);
+        background: -webkit-linear-gradient(125deg, rgba(5, 35, 50, 1) 16%, rgba(5, 42, 58, 1) 38%, rgba(5, 55, 72, 1) 60%, rgba(5, 74, 94, 1) 71%, rgba(5, 101, 123, 1) 89%, rgba(6, 129, 154, 1) 100%);
+        background: linear-gradient(125deg, rgba(5, 35, 50, 1) 16%, rgba(5, 42, 58, 1) 38%, rgba(5, 55, 72, 1) 60%, rgba(5, 74, 94, 1) 71%, rgba(5, 101, 123, 1) 89%, rgba(6, 129, 154, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#052332", endColorstr="#06819a", GradientType=1);
         color: white;
     }
 }

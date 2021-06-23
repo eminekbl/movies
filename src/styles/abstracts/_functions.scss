@@ -2,7 +2,7 @@
 @function gridSistem($birim, $toplam) {
     //Hata gorunuyor ama bu sekilde calismasi lazim
     @warn "Hata _gridSistemi";
-    @return (100*$birim)/ $toplam + %
+    @return (100*$birim)/ $toplam+%
 }
 
 ;

@@ -1,13 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap');
 // Font Variables
-$Quicksand: 'Quicksand', sans-serif;   
+$Quicksand: 'Quicksand',
+sans-serif;
 
 // Styles
 body {
   font-family: $Quicksand;
   font-weight: normal;
 }
-h1, h2, h3, h4, h5, h6 {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: $Quicksand;
   font-weight: normal;
 }
@@ -17,9 +24,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
-.white{
-    color: white;
+.white {
+  color: white;
 }
-.blue{
-    color:$blue;
+
+.blue {
+  color: $blue;
 }

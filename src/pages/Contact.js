@@ -11,23 +11,22 @@ function Contact() {
             alt=""
           />
           <div className="">
-          <a
-            id="mediaIcon"
-            class="fa fa-linkedin"
-            href="https://tr.linkedin.com/in/eminekebeli"
-          ></a>
-          <a
-            id="mediaIcon"
-            class="fa fa-instagram"
-            href="https://www.instagram.com/kbl.emine/"
-          ></a>
-          <a
-            id="mediaIcon"
-            class="fa fa-facebook"
-            href="https://www.facebook.com/emine.kebeli/"
-          ></a>
+            <a
+              id="mediaIcon"
+              class="fa fa-linkedin"
+              href="https://tr.linkedin.com/in/eminekebeli"
+            ></a>
+            <a
+              id="mediaIcon"
+              class="fa fa-instagram"
+              href="https://www.instagram.com/kbl.emine/"
+            ></a>
+            <a
+              id="mediaIcon"
+              class="fa fa-facebook"
+              href="https://www.facebook.com/emine.kebeli/"
+            ></a>
           </div>
-         
         </div>
       </div>
     </div>

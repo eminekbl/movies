@@ -1,43 +1,51 @@
-.add-movie-button{
-    width:70%;
-    height:auto;
+.add-movie-button {
+    width: 70%;
+    height: auto;
     min-height: 3rem;
-    background-color:$darkblue ;
+    background-color: $darkblue;
     border: none;
-    border-radius:20px;
+    border-radius: 20px;
     outline: none;
-    &:hover{
+
+    &:hover {
         font-weight: bold;
-        color:$darkblue ;
+        color: $darkblue;
         background-color: rgba(255, 255, 255, 0.603);
     }
-    &:active{
+
+    &:active {
         transform: scale(0.9);
     }
 }
-.edit-movie-button{
+
+.edit-movie-button {
     border: none;
     visibility: hidden;
     position: absolute;
-    width:100%;
-    top:100%;
-    left:50%;
-    transform:translateX(-50%) ;
-    &:hover{
-        letter-spacing:0.2rem;
+    width: 100%;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &:hover {
+        letter-spacing: 0.2rem;
     }
-};
-div:hover>.edit-movie-button{
-    visibility: visible ;
-    top:100%;
-    left:50%;
-    transform:translate(-50%,-100%) ;
-    transition: all 0.7s ease-in-out  ;
+}
+
+;
+
+div:hover>.edit-movie-button {
+    visibility: visible;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    transition: all 0.7s ease-in-out;
     background-color: lighten($blue, 30%);
     opacity: 0.9;
     font-size: large;
 }
+
 button[class^="edit-button"] {
-    width:clamp(3rem,100%,8rem);
+    width: clamp(3rem, 100%, 8rem);
     float: right;
-  }
+}

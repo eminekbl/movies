@@ -3,10 +3,10 @@ import { useParams } from "react-router-dom";
 import { Button, Form } from "react-bootstrap";
 import { useHistory } from "react-router";
 
-import { get, put,remove } from "../api";
+import { get, put, remove } from "../api";
 
 function Edit() {
-  let history = useHistory()
+  let history = useHistory();
   const params = useParams();
   const { id } = params;
   const [movie, setMovie] = useState([]);
@@ -22,13 +22,12 @@ function Edit() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-   await put(movie, id);
-   history.push(`/`)
-
+    await put(movie, id);
+    history.push(`/`);
   }
-  async function handleDelete(){
-   await remove(id)
-    history.push(`/`)
+  async function handleDelete() {
+    await remove(id);
+    history.push(`/`);
   }
 
   return (
@@ -39,7 +38,7 @@ function Edit() {
           {console.log(movie.Poster)}
         </div>
         <div className="col-md-7">
-          <Form onSubmit={(e)=>handleSubmit(e)}>
+          <Form onSubmit={(e) => handleSubmit(e)}>
             <Form.Group className="mb-3" controlId="formBasicTitle">
               <Form.Label>Title</Form.Label>
               <Form.Control
@@ -83,15 +82,21 @@ function Edit() {
                 }}
               />
             </Form.Group>
-            
-            <Button className="edit-button-save" variant="primary" type="submit">
+
+            <Button
+              className="edit-button-save"
+              variant="primary"
+              type="submit"
+            >
               Save
             </Button>
-            <Button className="edit-button-delete mx-3" variant="danger" onClick={()=>handleDelete()} >
+            <Button
+              className="edit-button-delete mx-3"
+              variant="danger"
+              onClick={() => handleDelete()}
+            >
               Delete Movie
             </Button>
-       
-        
           </Form>
         </div>
       </div>

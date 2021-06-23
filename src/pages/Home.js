@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Button,
-  Card,
-  Modal,
-  Form,
-} from "react-bootstrap";
+import { Button, Card, Modal, Form } from "react-bootstrap";
 import { useHistory } from "react-router";
 import { get, post } from "../api";
 
@@ -47,23 +42,22 @@ function Home() {
 
   const handleShow = () => setModalShow(true);
 
-  const handleCategory=async (e)=>{
-    if(e.target.checked){
-    selected.push(e.target.value)
-    console.log(selected)
-    setMovie(prevState => ({
-      ...prevState,
-      Category: selected.toString()
-    }));
-    console.log(movie.Category)
-    // setMovie({...movie, Category: movie.Category.concat(e.target.value) });
-  }
-    else{
-      let filtered=selected.filter((item)=>item!==e.target.value)
-      selected=filtered;
-      setMovie({...movie, Category: selected.toString()} );
+  const handleCategory = async (e) => {
+    if (e.target.checked) {
+      selected.push(e.target.value);
+      console.log(selected);
+      setMovie((prevState) => ({
+        ...prevState,
+        Category: selected.toString(),
+      }));
+      console.log(movie.Category);
+      // setMovie({...movie, Category: movie.Category.concat(e.target.value) });
+    } else {
+      let filtered = selected.filter((item) => item !== e.target.value);
+      selected = filtered;
+      setMovie({ ...movie, Category: selected.toString() });
     }
-  }
+  };
   return (
     <div className="container-fluid">
       <div className="row w-100">
@@ -87,7 +81,7 @@ function Home() {
           </div>
         </div>
         <div className="col-md-3 d-flex flex-column align-items-center mt-5">
-        <Button
+          <Button
             className="add-movie-button mb-5"
             onClick={() => {
               handleShow();
@@ -95,8 +89,13 @@ function Home() {
           >
             Add New Film
           </Button>
-          </div>
-        <Modal className="add-movie-modal" centered show={modalShow} onHide={handleClose}>
+        </div>
+        <Modal
+          className="add-movie-modal"
+          centered
+          show={modalShow}
+          onHide={handleClose}
+        >
           <Modal.Title
             id="contained-modal-title-vcenter"
             className="d-flex justify-content-center mt-3"
@@ -108,6 +107,7 @@ function Home() {
               <Form.Group className="mb-3" controlId="formBasicTitle">
                 <Form.Label>Title</Form.Label>
                 <Form.Control
+                  required
                   type="text"
                   placeholder=""
                   onChange={(e) => {
@@ -119,6 +119,7 @@ function Home() {
               <Form.Group className="mb-3" controlId="formBasicYear">
                 <Form.Label>Year</Form.Label>
                 <Form.Control
+                  required
                   type="text"
                   onChange={(e) => {
                     setMovie({ ...movie, Year: e.target.value });
@@ -131,6 +132,7 @@ function Home() {
                 <div className="row">
                   <div className={movie.Poster ? "col-sm-8" : ""}>
                     <Form.Control
+                      required
                       type="text"
                       onChange={(e) => {
                         setMovie({ ...movie, Poster: e.target.value });
@@ -148,21 +150,18 @@ function Home() {
                   </div>
                 </div>
               </Form.Group>
-
-              
             </Form>
-            {categories.map((item, index) =>(
+            {categories.map((item, index) => (
               <label key={index} className="mx-2">
-              <input
-              className="mx-1"
-                onChange={(e) => handleCategory(e)}
-                type="checkbox"
-                value={item}
-              />
-              {item}
-            </label>
+                <input
+                  className="mx-1"
+                  onChange={(e) => handleCategory(e)}
+                  type="checkbox"
+                  value={item}
+                />
+                {item}
+              </label>
             ))}
-            
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>

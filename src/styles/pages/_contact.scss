@@ -1,23 +1,28 @@
-.contact-container{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    .title{
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .title {
         font-weight: bold;
     }
-    img{
+
+    img {
         border-radius: 20px;
         width: 25rem;
     }
-    #mediaIcon{
+
+    #mediaIcon {
         margin-top: 1rem;
-        &::before{
+
+        &::before {
             display: inline-block;
             transform: scale(1.5);
             margin: 1rem;
         }
-        &:hover{
+
+        &:hover {
             color: $blue;
             background-color: white;
             border-radius: 50%;
