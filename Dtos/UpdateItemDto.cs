@@ -5,8 +5,6 @@ namespace movie.Dtos
     public record UpdateItemDto
     {
         [Required]
-        public string imdbID { get; init; }
-        [Required]
         public string Title { get; init; }
         [Required]
         public string Year { get; init; }

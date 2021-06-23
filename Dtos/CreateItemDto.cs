@@ -4,8 +4,7 @@ namespace movie.Dtos
 {
     public record CreateItemDto
     {
-       [Required]  
-        public string imdbID { get; init; }
+
         [Required] 
         public string Title { get; init; }
         [Required] 

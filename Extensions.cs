@@ -10,10 +10,10 @@ namespace movie
             return new MovieDto
             {
                 Id = item.Id,
-                imdbID = item.imdbID,
                 Title = item.Title,
                 Year = item.Year,
                 Poster = item.Poster,
+                Category = item.Category,
                 CreatedDate = item.CreatedDate
             };
         }

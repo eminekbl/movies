@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4Qil8l1hM//41ooW7pE+5Yr5UXTplu+c0B8JmNRr/LNYua1tuB/1YpryFx+cwm8cHQCxY7ndkw+vB7Ed5lg4Qw==",
+  "dgSpecHash": "bwgtROc6xeFzWDN1xzUrVc9BWD8K4/8YiT/r8M/N20u1vh/gR12O+SOyRQoXyHo21W7xCGNeapbKjkfLyu02iQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\emine\\Desktop\\movie\\movie.csproj",
+  "projectFilePath": "C:\\Users\\emine\\Documents\\GitHub\\movies\\movie.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\emine\\.nuget\\packages\\dnsclient\\1.4.0\\dnsclient.1.4.0.nupkg.sha512",
     "C:\\Users\\emine\\.nuget\\packages\\microsoft.aspnet.cors\\5.2.7\\microsoft.aspnet.cors.5.2.7.nupkg.sha512",

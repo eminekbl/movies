@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\emine\\Desktop\\movie\\movie.csproj": {}
+    "C:\\Users\\emine\\Documents\\GitHub\\movies\\movie.csproj": {}
   },
   "projects": {
-    "C:\\Users\\emine\\Desktop\\movie\\movie.csproj": {
+    "C:\\Users\\emine\\Documents\\GitHub\\movies\\movie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emine\\Desktop\\movie\\movie.csproj",
+        "projectUniqueName": "C:\\Users\\emine\\Documents\\GitHub\\movies\\movie.csproj",
         "projectName": "movie",
-        "projectPath": "C:\\Users\\emine\\Desktop\\movie\\movie.csproj",
+        "projectPath": "C:\\Users\\emine\\Documents\\GitHub\\movies\\movie.csproj",
         "packagesPath": "C:\\Users\\emine\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emine\\Desktop\\movie\\obj\\",
+        "outputPath": "C:\\Users\\emine\\Documents\\GitHub\\movies\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\emine\\AppData\\Roaming\\NuGet\\NuGet.Config"
