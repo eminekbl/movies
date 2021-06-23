@@ -12,7 +12,12 @@ a:active {
     box-sizing: border-box !important;
 }
 body{
-    background-color: $blue;
+    background: rgb(5,35,50);
+    background: -moz-linear-gradient(125deg, rgba(5,35,50,1) 16%, rgba(5,42,58,1) 38%, rgba(5,55,72,1) 60%, rgba(5,74,94,1) 71%, rgba(5,101,123,1) 89%, rgba(6,129,154,1) 100%);
+    background: -webkit-linear-gradient(125deg, rgba(5,35,50,1) 16%, rgba(5,42,58,1) 38%, rgba(5,55,72,1) 60%, rgba(5,74,94,1) 71%, rgba(5,101,123,1) 89%, rgba(6,129,154,1) 100%);
+    background: linear-gradient(125deg, rgba(5,35,50,1) 16%, rgba(5,42,58,1) 38%, rgba(5,55,72,1) 60%, rgba(5,74,94,1) 71%, rgba(5,101,123,1) 89%, rgba(6,129,154,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#052332",endColorstr="#06819a",GradientType=1);
+min-height:100vh;
 }
 .radius-20 {
     border-radius: 20px;

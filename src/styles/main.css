@@ -78,7 +78,7 @@ select {
   width: 70%;
   height: auto;
   min-height: 3rem;
-  background-color: #023047;
+  background-color: #022131;
   border: none;
   border-radius: 20px;
   outline: none;
@@ -86,7 +86,7 @@ select {
 
 .add-movie-button:hover {
   font-weight: bold;
-  color: #023047;
+  color: #022131;
   background-color: rgba(255, 255, 255, 0.603);
 }
 
@@ -144,7 +144,10 @@ a:active {
 }
 
 body {
-  background-color: #264653;
+  background: #052332;
+  background: linear-gradient(125deg, #052332 16%, #052a3a 38%, #053748 60%, #054a5e 71%, #05657b 89%, #06819a 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#052332",endColorstr="#06819a",GradientType=1);
+  min-height: 100vh;
 }
 
 .radius-20 {
@@ -194,6 +197,13 @@ body {
 
 .card-container img {
   height: 100%;
+}
+
+.add-movie-modal .modal-content {
+  background: #052332;
+  background: linear-gradient(125deg, #052332 16%, #052a3a 38%, #053748 60%, #054a5e 71%, #05657b 89%, #06819a 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#052332",endColorstr="#06819a",GradientType=1);
+  color: white;
 }
 
 .contact-container {

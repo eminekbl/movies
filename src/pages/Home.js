@@ -11,14 +11,14 @@ import { get, post } from "../api";
 function Home() {
   const [modalShow, setModalShow] = useState(false);
   const [movies, setMovies] = useState([]);
-  const [movie, setMovie] = useState([]);
-  const [selected, setSelected] = useState([]);
+  const [movie, setMovie] = useState({});
+  var selected = [];
   const [categories, setCategories] = useState([
-    "drama",
-    "romance",
-    "western",
-    "adventure",
-    "action",
+    "Drama",
+    "Romance",
+    "Western",
+    "Adventure",
+    "Action",
     "Sci-Fi",
     "Crime",
     "Biography",
@@ -47,19 +47,25 @@ function Home() {
 
   const handleShow = () => setModalShow(true);
 
-  const handleCategory=(e)=>{
+  const handleCategory=async (e)=>{
     if(e.target.checked){
-    setSelected([...selected, e.target.value ]);
-    setMovie({...movie, Category: selected.toString() });
+    selected.push(e.target.value)
+    console.log(selected)
+    setMovie(prevState => ({
+      ...prevState,
+      Category: selected.toString()
+    }));
+    console.log(movie.Category)
+    // setMovie({...movie, Category: movie.Category.concat(e.target.value) });
   }
     else{
       let filtered=selected.filter((item)=>item!==e.target.value)
-      setSelected(filtered)
+      selected=filtered;
       setMovie({...movie, Category: selected.toString()} );
     }
   }
   return (
-    <div className="container-fluid bg-blue">
+    <div className="container-fluid">
       <div className="row w-100">
         <div className="col-md-9">
           <div className="row">
@@ -90,10 +96,10 @@ function Home() {
             Add New Film
           </Button>
           </div>
-        <Modal centered show={modalShow} onHide={handleClose}>
+        <Modal className="add-movie-modal" centered show={modalShow} onHide={handleClose}>
           <Modal.Title
             id="contained-modal-title-vcenter"
-            className="d-flex justify-content-center"
+            className="d-flex justify-content-center mt-3"
           >
             Add New Film
           </Modal.Title>
@@ -146,8 +152,9 @@ function Home() {
               
             </Form>
             {categories.map((item, index) =>(
-              <label key={index}>
+              <label key={index} className="mx-2">
               <input
+              className="mx-1"
                 onChange={(e) => handleCategory(e)}
                 type="checkbox"
                 value={item}
