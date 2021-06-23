@@ -22,17 +22,6 @@ function Edit() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    // const changeProperty = ["imdbID", "title", "year", "poster", "category"];
-
-    // const filtered = Object.keys(movie)
-    //   .filter((key) => changeProperty.includes(key))
-    //   .reduce((obj, key) => {
-    //     return {
-    //       ...obj,
-    //       [key]: movie[key],
-    //     };
-    //   }, {});
-    //   console.log(filtered)
    await put(movie, id);
    history.push(`/`)
 
@@ -43,10 +32,10 @@ function Edit() {
   }
 
   return (
-    <div className="container">
+    <div className="container-fluid">
       <div className="row">
-        <div className="col-md-5">
-          <img src={movie.Poster} alt="" />
+        <div className="col-md-5 d-flex justify-content-center align-items-center">
+          <img className="edit-poster" src={movie.Poster} alt="" />
           {console.log(movie.Poster)}
         </div>
         <div className="col-md-7">
@@ -94,23 +83,15 @@ function Edit() {
                 }}
               />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicImdbID">
-              <Form.Label>ImdbID</Form.Label>
-              <Form.Control
-                type="text"
-                value={movie.ImdbID}
-                onChange={(e) => {
-                  setMovie({ ...movie, ImdbID: e.target.value });
-                }}
-              />
-            </Form.Group>
-
-            <Button variant="primary" type="submit">
+            
+            <Button className="edit-button-save" variant="primary" type="submit">
               Save
             </Button>
-            <Button variant="danger" onClick={()=>handleDelete()} >
-              Delete
+            <Button className="edit-button-delete mx-3" variant="danger" onClick={()=>handleDelete()} >
+              Delete Movie
             </Button>
+       
+        
           </Form>
         </div>
       </div>

@@ -11,14 +11,11 @@ function NavBar(props) {
       </Nav.Link>
     ));
     return (
-        <Navbar bg="light" expand="lg">
-        <Navbar.Brand as={Link} to="/">Movies</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar variant="dark" className="bg-darkblue " >
+        <Navbar.Brand as={Link} to="/" className="mx-5">Movies</Navbar.Brand>
           <Nav className="mr-auto">
           {linkItems}
            </Nav>
-        </Navbar.Collapse>
       </Navbar>
     )
 }

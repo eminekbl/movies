@@ -6,24 +6,13 @@
         text-align: center;
         top: 0px;
         width:100%;
-        background-color:rgba(245, 245, 245, 0.472)
+        background-color:rgba(108, 116, 158, 0.472);     
     };
+    &:hover .card-title{
+        font-weight: bold;
+        background-color:rgba(224, 227, 245, 0.788);  
+    } 
     img{
         height:100%;
     }
-    button{
-        visibility: hidden;
-        position: absolute;
-        top:100%;
-        left:50%;
-        transform:translateX(-50%) ;
-    }
-    &:hover button{
-        visibility: visible !important;
-        top:80%;
-        left:50%;
-        transform:translateX(-50%) ;
-        transition: all 0.7s ease-in-out  ;
-    }
-
 }

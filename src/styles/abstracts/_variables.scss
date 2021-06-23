@@ -1,15 +1,6 @@
 // Renkler
-$sari: #FFC12E !default;
-$turuncu: #E94719;
-$bordo: #911E2F;
-$yesil: #A6C3B1;
-$navbarc: #fbf7f4;
-$dark: #333333;
-$mavi:#124C63;
-
+$orange: #f4a261;
+$red: #e76f51;
+$blue:#264653 !default;
+$darkblue:#023047;
 //Boyutlar
-$navbarh: 150px; // navbar yuksekligi
-$navbarlh:75px; //kisa navbarin yuksekligi
-$ph: calc(100vh - #{$navbarlh}); // pencere yuksekligi
-$headerh:350px;
-$blokh:calc(100vh - #{$headerh})

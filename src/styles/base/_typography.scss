@@ -1,23 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap');
+// Font Variables
+$Quicksand: 'Quicksand', sans-serif;   
+
+// Styles
 body {
-    font-family: Izmir-Regular;
+  font-family: $Quicksand;
+  font-weight: normal;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: $Quicksand;
+  font-weight: normal;
 }
 
-.bold {
-    font-family: Izmir-Bold;
+.button {
+  font-family: $Quicksand;
+  font-weight: bold;
 }
 
-.medium {
-    font-family: Izmir-Medium;
-}
-
-.regular {
-    font-family: Izmir-Regular;
-}
-
-.turuncu{
-    color:$turuncu;
-}
 .white{
-    color:white
+    color: white;
 }
-
+.blue{
+    color:$blue;
+}
