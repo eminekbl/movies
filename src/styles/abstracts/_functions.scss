@@ -1,0 +1,16 @@
+//Grid Sistemi
+@function gridSistem($birim, $toplam) {
+    //Hata gorunuyor ama bu sekilde calismasi lazim
+    @warn "Hata _gridSistemi";
+    @return (100*$birim)/ $toplam + %
+}
+
+;
+
+// Birim Cevir
+///@param {Number} $px
+@function birimCevir($px) {
+    @return $px/16+rem
+}
+
+;

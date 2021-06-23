@@ -1,0 +1,28 @@
+// Abstracts
+@import "./abstracts/variables";
+@import "./abstracts/functions";
+@import "./abstracts/mixins";
+
+//base
+@import "./base/typography";
+@import "./base/reset";
+
+//components
+@import "./components/buttons";
+@import "./components/forms";
+
+//layout
+@import "./layout/navbar";
+@import "./layout/footer";
+@import "./layout/parent";
+
+
+//pages
+@import "./pages/home";
+@import "./pages/contact";
+
+//themes
+
+//vendors
+@import "./vendors/reset-bootstrap";
+@import "./vendors/custom-bootstrap"

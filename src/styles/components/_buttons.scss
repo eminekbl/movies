@@ -1,0 +1,30 @@
+.beyaz-buton{
+    padding: 5px 10px;
+    background-color:white;
+    color: $turuncu;
+    border:1px solid $turuncu;  
+    border-radius:10px;
+    outline-color: transparent;
+    &:hover{
+        color:white;
+        background-color:$turuncu;
+        border-color: white;
+    }
+}
+.turuncu-buton{
+    width: fit-content;
+    padding: 5px 10px;
+    background-color:$turuncu;
+    color: white;
+    border:1px solid $turuncu;  
+    border-radius:10px;
+    outline-color: transparent;
+    &:hover{
+        color:$turuncu;
+        background-color:white;
+        border-color: $turuncu;
+    }
+}
+button{
+    font-family: "Izmir-Regular" !important;
+}

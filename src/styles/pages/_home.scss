@@ -1,0 +1,29 @@
+.card-container {
+    
+    @include aspect-ratio(3, 4);
+    .card-title{
+        position: absolute;
+        text-align: center;
+        top: 0px;
+        width:100%;
+        background-color:rgba(245, 245, 245, 0.472)
+    };
+    img{
+        height:100%;
+    }
+    button{
+        visibility: hidden;
+        position: absolute;
+        top:100%;
+        left:50%;
+        transform:translateX(-50%) ;
+    }
+    &:hover button{
+        visibility: visible !important;
+        top:80%;
+        left:50%;
+        transform:translateX(-50%) ;
+        transition: all 0.7s ease-in-out  ;
+    }
+
+}

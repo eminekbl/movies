@@ -1,0 +1,36 @@
+$spacer:1rem;
+$grid-gutter-width: 1.5rem;
+$gutters: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+);
+
+
+$theme-colors: ("info": $sari,
+        "danger": $bordo,
+        "success": $yesil,
+        "primary": $sari);
+
+
+
+/* import bootstrap to set changes */
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+
+
+
+// Required
+// @import "./../node_modules/bootstrap/scss/functions";
+// @import "../node_modules/bootstrap/scss/variables";
+// @import "../node_modules/bootstrap/scss/mixins";
+
+// $theme-colors: map-remove($theme-colors, "primary");
+
+// // Optional
+// @import "../node_modules/bootstrap/scss/root";
+// @import "../node_modules/bootstrap/scss/reboot";
+// @import "../node_modules/bootstrap/scss/type";

@@ -1,0 +1,15 @@
+.container-fluid {
+    padding-inline: 0 !important;
+    // min-height: $ph;
+    width: 100%;
+}
+
+.row{
+    max-width: 100vw;
+}
+
+// @media (min-width: 1200px) {
+//     .container {
+//         max-width:calc(100vw - #{$sidebarw}) !important
+//     }
+// }
