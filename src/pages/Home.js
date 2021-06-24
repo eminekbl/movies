@@ -7,7 +7,9 @@ function Home() {
   const [modalShow, setModalShow] = useState(false);
   const [movies, setMovies] = useState([]);
   const [movie, setMovie] = useState({});
-  var selected = [];
+  const [movieFilter, setMovieFilter] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
+
   const [categories, setCategories] = useState([
     "Drama",
     "Romance",
@@ -25,6 +27,7 @@ function Home() {
     async function fetchMovies() {
       let data = await get("");
       setMovies(data);
+      setFilteredData(data);
     }
     fetchMovies();
   }, [modalShow]);
@@ -42,42 +45,72 @@ function Home() {
 
   const handleShow = () => setModalShow(true);
 
-  const handleCategory = async (e) => {
+  const handleCategory = (e) => {
     if (e.target.checked) {
-      selected.push(e.target.value);
-      console.log(selected);
+      let selected;
+      movie.Category
+        ? (selected = movie.Category + "," + e.target.value)
+        : (selected = e.target.value);
+      setMovie((prevState) => ({ ...prevState, Category: selected }));
+    } else {
+      let selected = movie.Category.split(",").filter(
+        (item) => item !== e.target.value
+      );
       setMovie((prevState) => ({
         ...prevState,
         Category: selected.toString(),
       }));
-      console.log(movie.Category);
-      // setMovie({...movie, Category: movie.Category.concat(e.target.value) });
-    } else {
-      let filtered = selected.filter((item) => item !== e.target.value);
-      selected = filtered;
-      setMovie({ ...movie, Category: selected.toString() });
     }
   };
+  const handleFilter = (e) => {
+    let selected;
+    if (e.target.checked) {
+      selected = movieFilter;
+      selected.push(e.target.value);
+      setMovieFilter(selected);
+      console.log(movieFilter);
+    } else {
+      selected = movieFilter.filter((item) => item !== e.target.value);
+      setMovieFilter(selected);
+    }
+
+    let arr = [];
+    movies.map((item, index) => {
+      inMovie(selected, item.Category.split(","), true)
+        ? arr.push(item)
+        : console.log();
+      setFilteredData(arr);
+    });
+  };
+  function inMovie(searchin, fullarray, matchAll = false) {
+    if (matchAll) {
+      return searchin.every((i) => fullarray.includes(i));
+    } else {
+      return searchin.some((i) => fullarray.includes(i));
+    }
+  }
   return (
     <div className="container-fluid">
       <div className="row w-100 p-0 m-0">
         <div className="col-md-9">
           <div className="row">
-            {movies.map((item, index) => (
-              // filmler map ile listeleniyor
-              <div key={index} className="card-container col-sm-6 col-md-4 ">
-                <Card className="content">
-                  <Card.Title>{item.Title}</Card.Title>
-                  <Card.Img variant="top" src={item.Poster} />
-                  <Button
-                    className="bg-blue white edit-movie-button"
-                    onClick={() => handleClick(item.Id)}
-                  >
-                    EDIT
-                  </Button>
-                </Card>
-              </div>
-            ))}
+            {
+              filteredData.map((item, index) => (
+                // filmler map ile listeleniyor
+                <div key={index} className="card-container col-sm-6 col-md-4 ">
+                  <Card className="content">
+                    <Card.Title>{item.Title}</Card.Title>
+                    <Card.Img variant="top" src={item.Poster} />
+                    <Button
+                      className="bg-blue white edit-movie-button"
+                      onClick={() => handleClick(item.Id)}
+                    >
+                      EDIT
+                    </Button>
+                  </Card>
+                </div>
+              ))
+           }
           </div>
         </div>
         <div className="col-md-3 d-flex flex-column align-items-center mt-5">
@@ -89,7 +122,19 @@ function Home() {
           >
             Add New Film
           </Button>
+          {categories.map((item, index) => (
+            <label key={index} className="mx-2 white">
+              <input
+                className="mx-1"
+                onChange={(e) => handleFilter(e)}
+                type="checkbox"
+                value={item}
+              />
+              {item}
+            </label>
+          ))}
         </div>
+
         <Modal
           className="add-movie-modal"
           centered

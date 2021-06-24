@@ -15,7 +15,7 @@ function NavBar(props) {
     return (
         <Navbar variant="dark" className="bg-darkblue " >
         <Navbar.Brand as={Link} to="/" className="mx-5">
-          <img className="d-inline me-2" style={{"width":"35px"}} src={brand} alt="" srcset="" />
+          <img className="d-inline me-2" style={{"width":"35px"}} src={brand} alt="" srcSet="" />
           Movies
           </Navbar.Brand>
           <Nav className="mr-auto">
