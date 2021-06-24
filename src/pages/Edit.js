@@ -31,7 +31,7 @@ function Edit() {
   async function handleDelete() {
     confirmAlert({
       title: 'Confirm to delete',
-      message: 'Are you sure to detele this movie',
+      message: 'Are you sure to delete this movie?',
       buttons: [
         {
           label: 'Yes',
