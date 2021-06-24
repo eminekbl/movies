@@ -51,12 +51,12 @@ function Edit() {
 
   return (
     <div className="container-fluid">
-      <div className="row">
-        <div className="col-md-5 d-flex justify-content-center align-items-center">
+      <div className="row p-2 m-0 d-flex justify-content-center align-items-center">
+        <div className="col-md-5  d-flex justify-content-center">
           <img className="edit-poster" src={movie.Poster} alt="" />
           {console.log(movie.Poster)}
         </div>
-        <div className="col-md-7">
+        <div className="col-md-7  white ">
           <Form onSubmit={(e) => handleSubmit(e)}>
             <Form.Group className="mb-3" controlId="formBasicTitle">
               <Form.Label>Title</Form.Label>
@@ -110,7 +110,7 @@ function Edit() {
               Save
             </Button>
             <Button
-              className="edit-button-delete mx-3"
+              className="edit-button-delete me-3"
               variant="danger"
               onClick={() => handleDelete()}
             >
