@@ -100,6 +100,7 @@ function Edit() {
                   setMovie({ ...movie, Category: e.target.value });
                 }}
               />
+              
             </Form.Group>
 
             <Button

@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Button, Card, Modal, Form, CarouselItem, FormControl } from "react-bootstrap";
+import {
+  Button,
+  Card,
+  Form,
+  FormControl,
+} from "react-bootstrap";
 import { useHistory } from "react-router";
 import { get, post } from "../api";
 
@@ -70,24 +75,19 @@ function Home() {
   };
 
   const handleSearch = (value) => {
-    setSearch(value)
-    let selected = movies;
-    selected = movies.filter((item) => item.Title.includes(value));
+    setSearch(value);
+    let selected = filteredData.filter((item) => item.Title.includes(value));
     setFilteredData(selected);
-    console.log(selected)
+  };
 
-  }
-
-  const titleUpperCase=(title)=>{
-    const arr = title.split(" "); 
-    for(var i=0; i<arr.length; i++)
-  {
-    arr[i]= arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
-
-  }
-  const title2 = arr.join(" ");
-return(title2)
-  }
+  const titleUpperCase = (title) => {
+    const arr = title.split(" ");
+    for (var i = 0; i < arr.length; i++) {
+      arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+    }
+    const title2 = arr.join(" ");
+    return title2;
+  };
   window.addEventListener("scroll", handleScroll);
 
   return (
@@ -99,10 +99,9 @@ return(title2)
               // filmler map ile listeleniyor
               <div key={index} className="card-container col-sm-6 col-md-4 ">
                 <Card className="content">
-                  <Card.Title>{
-                    titleUpperCase(item.Title.toLowerCase())
-                  
-                  }</Card.Title>
+                  <Card.Title>
+                    {titleUpperCase(item.Title.toLowerCase())}
+                  </Card.Title>
                   <Card.Img variant="top" src={item.Poster} />
                   <Button
                     className="bg-blue white edit-movie-button"
@@ -125,7 +124,7 @@ return(title2)
               value={search}
               className=""
               aria-label="Search"
-              onChange={(e)=>handleSearch(e.target.value)}
+              onChange={(e) => handleSearch(e.target.value)}
             />
           </Form>
           <div className="row filter-label-row mt-3">
