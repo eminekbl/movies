@@ -124,7 +124,7 @@ function Home() {
               value={search}
               className=""
               aria-label="Search"
-              onChange={(e) => handleSearch(e.target.value)}
+              onChange={(e) => handleSearch(e.target.value.toLowerCase())}
             />
           </Form>
           <div className="row filter-label-row mt-3">
