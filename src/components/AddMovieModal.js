@@ -50,7 +50,7 @@ function AddMovieModal({ setModalShow, modalShow, categories }) {
               type="text"
               placeholder=""
               onChange={(e) => {
-                setMovie({ ...movie, Title: e.target.value });
+                setMovie({ ...movie, Title: e.target.value.toLowerCase() });
               }}
             />
           </Form.Group>
@@ -103,12 +103,14 @@ function AddMovieModal({ setModalShow, modalShow, categories }) {
         ))}
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
-          Close
-        </Button>
-        <Button variant="primary" type="submit" form="movieform">
+        <div className="me-auto">
+        <Button className="bg-green mx-2" type="submit" form="movieform">
           Save
         </Button>
+        <Button className="bg-red " onClick={handleClose}>
+          Close
+        </Button>
+        </div>
       </Modal.Footer>
     </Modal>
   );

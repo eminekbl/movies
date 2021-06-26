@@ -50,7 +50,7 @@ function Edit() {
   }
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid edit-page">
       <div className="row p-2 m-0 d-flex justify-content-center align-items-center">
         <div className="col-md-5  d-flex justify-content-center">
           <img className="edit-poster" src={movie.Poster} alt="" />
@@ -64,7 +64,7 @@ function Edit() {
                 type="text"
                 value={movie.Title}
                 onChange={(e) => {
-                  setMovie({ ...movie, Title: e.target.value });
+                  setMovie({ ...movie, Title: e.target.value.toLowerCase() });
                 }}
               />
             </Form.Group>

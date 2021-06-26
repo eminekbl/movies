@@ -24,27 +24,37 @@
 
 .add-movie-modal {
     .modal-content {
-        background: rgb(5, 35, 50);
-        background: -moz-linear-gradient(125deg, rgba(5, 35, 50, 1) 16%, rgba(5, 42, 58, 1) 38%, rgba(5, 55, 72, 1) 60%, rgba(5, 74, 94, 1) 71%, rgba(5, 101, 123, 1) 89%, rgba(6, 129, 154, 1) 100%);
-        background: -webkit-linear-gradient(125deg, rgba(5, 35, 50, 1) 16%, rgba(5, 42, 58, 1) 38%, rgba(5, 55, 72, 1) 60%, rgba(5, 74, 94, 1) 71%, rgba(5, 101, 123, 1) 89%, rgba(6, 129, 154, 1) 100%);
-        background: linear-gradient(125deg, rgba(5, 35, 50, 1) 16%, rgba(5, 42, 58, 1) 38%, rgba(5, 55, 72, 1) 60%, rgba(5, 74, 94, 1) 71%, rgba(5, 101, 123, 1) 89%, rgba(6, 129, 154, 1) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#052332", endColorstr="#06819a", GradientType=1);
+        background: rgb(2, 33, 49);
+        background: -moz-linear-gradient(125deg, rgba(2, 33, 49, 1) 0%, rgba(6, 41, 55, 1) 27%, rgba(11, 49, 62, 1) 39%, rgba(19, 62, 73, 1) 50%, rgba(27, 76, 85, 1) 60%, rgba(32, 84, 92, 1) 66%, rgba(44, 105, 109, 1) 74%, rgba(59, 130, 129, 1) 81%, rgba(64, 139, 137, 1) 85%, rgba(72, 153, 148, 1) 88%, rgba(79, 165, 158, 1) 91%, rgba(91, 185, 174, 1) 94%, rgba(113, 223, 205, 1) 98%, rgba(132, 255, 232, 1) 100%);
+        background: -webkit-linear-gradient(125deg, rgba(2, 33, 49, 1) 0%, rgba(6, 41, 55, 1) 27%, rgba(11, 49, 62, 1) 39%, rgba(19, 62, 73, 1) 50%, rgba(27, 76, 85, 1) 60%, rgba(32, 84, 92, 1) 66%, rgba(44, 105, 109, 1) 74%, rgba(59, 130, 129, 1) 81%, rgba(64, 139, 137, 1) 85%, rgba(72, 153, 148, 1) 88%, rgba(79, 165, 158, 1) 91%, rgba(91, 185, 174, 1) 94%, rgba(113, 223, 205, 1) 98%, rgba(132, 255, 232, 1) 100%);
+        background: linear-gradient(125deg, rgba(2, 33, 49, 1) 0%, rgba(6, 41, 55, 1) 27%, rgba(11, 49, 62, 1) 39%, rgba(19, 62, 73, 1) 50%, rgba(27, 76, 85, 1) 60%, rgba(32, 84, 92, 1) 66%, rgba(44, 105, 109, 1) 74%, rgba(59, 130, 129, 1) 81%, rgba(64, 139, 137, 1) 85%, rgba(72, 153, 148, 1) 88%, rgba(79, 165, 158, 1) 91%, rgba(91, 185, 174, 1) 94%, rgba(113, 223, 205, 1) 98%, rgba(132, 255, 232, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#022131", endColorstr="#84ffe8", GradientType=1);
         color: white;
     }
 }
 
-.filter-label-row{
-  
-    white-space:nowrap;
+.filter-label-row {
+
+    white-space: nowrap;
     display: flex;
     align-items: center;
     justify-content: center;
- 
-    .filter-label{
+
+    .filter-label {
         display: flex;
         align-items: center;
         justify-content: right;
 
     }
- 
+
+}
+
+.home-sidebar{
+    position: fixed;
+    right: 0px;
+    margin-top: 3rem;
+    transition: all 0.7s ease-in-out;
+    &.active{
+        margin-top: -3rem !important;
+    }
 }

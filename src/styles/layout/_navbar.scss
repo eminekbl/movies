@@ -1,0 +1,10 @@
+.nav-link:hover {
+    text-shadow: 0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 15px $neonblue,
+        0 0 40px $neonblue;
+}
+
+.navbar {
+    height: $navbar;
+}
