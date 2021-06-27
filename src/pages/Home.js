@@ -61,14 +61,7 @@ function Home() {
     }
   };
 
-  const titleUpperCase = (title) => {
-    const arr = title.split(" ");
-    for (var i = 0; i < arr.length; i++) {
-      arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
-    }
-    const title2 = arr.join(" ");
-    return title2;
-  };
+ 
   window.addEventListener("scroll", handleScroll);
 
   return (
@@ -81,14 +74,14 @@ function Home() {
               <div key={index} className="card-container col-sm-6 col-md-4 ">
                 <Card className="content">
                   <Card.Title>
-                    {titleUpperCase(item.Title.toLowerCase())}
+                    {GlobalContextAPI.titleUpperCase(item.Title)}
                   </Card.Title>
                   <Card.Img variant="top" src={item.Poster} />
                   <Button
                     className="bg-blue white edit-movie-button"
                     onClick={() => handleClick(item.Id)}
                   >
-                    EDIT
+                    See More
                   </Button>
                 </Card>
               </div>

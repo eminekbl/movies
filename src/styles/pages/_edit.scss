@@ -18,3 +18,19 @@
     }
 
 }
+.edit-page form{
+    input{
+        background-color: transparent;
+        border: none;
+        color: white;
+    }
+    .form-group>label{
+        letter-spacing: 0.1rem;
+        color: white;
+        text-shadow: 0 0 3px rgb(255, 255, 255),
+        0 0 10px $neonblue,
+  
+ 
+    }
+
+}

@@ -75,13 +75,18 @@ function Edit() {
         </div>
   
         <div className="col-md-7 white order-1 order-md-2 mb-2">
-         
+          <Button
+              className="edit-button bg-blue "
+              onClick={() => history.push(`/`)}
+            >
+              Go Back
+            </Button>
           <Form onSubmit={(e) => handleSubmit(e)}>
             <Form.Group className="mb-3" controlId="formBasicTitle">
               <Form.Label>Title</Form.Label>
               <Form.Control
                 type="text"
-                value={movie.Title}
+                value={movie.Title ? GlobalContextAPI.titleUpperCase(movie.Title):""}
                 onChange={(e) => {
                   setMovie({ ...movie, Title: e.target.value.toLowerCase() });
                 }}
@@ -129,7 +134,9 @@ function Edit() {
                 }}
               />
             </Form.Group>
-            <div className="row filter-label-row mt-3">
+            <div className=" mb-3 form-group">
+            <Form.Label>Categories</Form.Label>
+              <div className="row filter-label-row">
               {GlobalContextAPI.categories.map((item, index) => (
                 <label
                   key={index}
@@ -147,6 +154,8 @@ function Edit() {
                   {item}
                 </label>
               ))}
+              </div>
+             
             </div>
             <Button
               className="edit-button-save mt-3 bg-green bg-red"
@@ -160,6 +169,7 @@ function Edit() {
             >
               Delete Movie
             </Button>
+          
           </Form>
         </div>
       </div>

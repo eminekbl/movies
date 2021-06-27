@@ -351,4 +351,16 @@ body {
   color: #022131 !important;
   font-weight: bold;
 }
+
+.edit-page form input {
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+.edit-page form .form-group > label {
+  letter-spacing: 0.1rem;
+  color: white;
+  text-shadow: 0 0 3px white, 0 0 10px #84ffe8;
+}
 /*# sourceMappingURL=main.css.map */
