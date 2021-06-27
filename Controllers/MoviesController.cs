@@ -49,8 +49,10 @@ namespace movie.Controllers
             {
                 Id = Guid.NewGuid(),
                 Title = MovieDto.Title,
+                Description = MovieDto.Description,
                 Year = MovieDto.Year,
                 Poster = MovieDto.Poster,
+                Trailer = MovieDto.Trailer,
                 Category = MovieDto.Category,
                 CreatedDate = DateTimeOffset.UtcNow
             };
@@ -70,8 +72,10 @@ namespace movie.Controllers
             Movie updatedmovie = existingMovie with
             {
                 Title = MovieDto.Title,
+                Description = MovieDto.Description,
                 Year = MovieDto.Year,
                 Poster = MovieDto.Poster,
+                Trailer = MovieDto.Trailer,
                 Category = MovieDto.Category,
             };
             _itemsRepository.UpdateItem(updatedmovie);
