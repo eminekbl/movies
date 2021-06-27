@@ -12,6 +12,12 @@ function Context(props) {
     "Sci-Fi",
     "Crime",
     "Biography",
+    "Fantasy",
+    "History",
+    "Animation",
+    "War",
+    "Comedy",
+    "Horror"
   ]);
   const titleUpperCase = (title) => {
     title=title.toLowerCase();

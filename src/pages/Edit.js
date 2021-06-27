@@ -94,7 +94,7 @@ function Edit() {
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicTitle">
               <Form.Label>Description</Form.Label>
-              <Form.Control
+              <Form.Control as="textarea" rows={3}
                 type="text"
                 value={movie.Description}
                 onChange={(e) => {

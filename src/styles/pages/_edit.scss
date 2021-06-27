@@ -24,6 +24,9 @@
         border: none;
         color: white;
     }
+    textarea{
+        @extend input
+    }
     .form-group>label{
         letter-spacing: 0.1rem;
         color: white;
