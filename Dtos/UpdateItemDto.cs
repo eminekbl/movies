@@ -6,11 +6,9 @@ namespace movie.Dtos
     {
         [Required]
         public string Title { get; init; }
-        [Required]
+        public string Description { get; init; }
         public string Year { get; init; }
-        [Required]
         public string Poster { get; init; }
-        [Required]
         public string Category { get; init; }
 
 

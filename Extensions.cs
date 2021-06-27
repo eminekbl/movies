@@ -11,6 +11,8 @@ namespace movie
             {
                 Id = item.Id,
                 Title = item.Title,
+                Description = item.Description,
+                Trailer = item.Trailer,
                 Year = item.Year,
                 Poster = item.Poster,
                 Category = item.Category,
