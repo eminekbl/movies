@@ -69,11 +69,13 @@ function Edit() {
 
   return (
     <div className="container-fluid edit-page">
-      <div className="row p-2 m-0 d-flex justify-content-center align-items-center">
-        <div className="col-md-5  d-flex justify-content-center">
+      <div className="row p-2 m-0 d-flex justify-content-center mt-3">
+        <div className="col-md-5 order-2 order-md-1">
           <img className="edit-poster" src={movie.Poster} alt="" />
         </div>
-        <div className="col-md-7 white">
+  
+        <div className="col-md-7 white order-1 order-md-2 mb-2">
+         
           <Form onSubmit={(e) => handleSubmit(e)}>
             <Form.Group className="mb-3" controlId="formBasicTitle">
               <Form.Label>Title</Form.Label>
@@ -82,6 +84,16 @@ function Edit() {
                 value={movie.Title}
                 onChange={(e) => {
                   setMovie({ ...movie, Title: e.target.value.toLowerCase() });
+                }}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicTitle">
+              <Form.Label>Description</Form.Label>
+              <Form.Control
+                type="text"
+                value={movie.Description}
+                onChange={(e) => {
+                  setMovie({ ...movie, Description: e.target.value });
                 }}
               />
             </Form.Group>
@@ -104,6 +116,16 @@ function Edit() {
                 value={movie.Poster}
                 onChange={(e) => {
                   setMovie({ ...movie, Poster: e.target.value });
+                }}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicTrailer">
+              <Form.Label>Trailer</Form.Label>
+              <Form.Control
+                type="text"
+                value={movie.Trailer}
+                onChange={(e) => {
+                  setMovie({ ...movie, Trailer: e.target.value });
                 }}
               />
             </Form.Group>
@@ -133,7 +155,7 @@ function Edit() {
               Save
             </Button>
             <Button
-              className="edit-button-delete me-3 mt-3"
+              className="edit-button-delete me-3 mt-3 bg-red"
               onClick={() => handleDelete()}
             >
               Delete Movie
@@ -141,6 +163,11 @@ function Edit() {
           </Form>
         </div>
       </div>
+      {movie.Trailer ? (
+          <video className="col-12 p-3" controls  autoPlay={false} >
+          <source src={movie.Trailer} type="video/mp4" />
+        </video>
+        ): ""}
     </div>
   );
 }

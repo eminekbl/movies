@@ -7,6 +7,7 @@ function AddMovieModal({ setModalShow, modalShow, categories }) {
   const handleClose = () => setModalShow(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(movie)
     await post(movie);
     setMovie([]);
     setModalShow(false);
@@ -44,9 +45,8 @@ function AddMovieModal({ setModalShow, modalShow, categories }) {
       <Modal.Body>
         <Form onSubmit={(e) => handleSubmit(e)} id="movieform">
           <Form.Group className="mb-3" controlId="formBasicTitle">
-            <Form.Label>Title</Form.Label>
+            <Form.Label>Title *</Form.Label>
             <Form.Control
-              required
               type="text"
               placeholder=""
               onChange={(e) => {
@@ -55,10 +55,18 @@ function AddMovieModal({ setModalShow, modalShow, categories }) {
             />
           </Form.Group>
 
+          <Form.Group className="mb-3" controlId="formBasicDescription">
+            <Form.Label>Description</Form.Label>
+            <Form.Control
+              type="text"
+              onChange={(e) => {
+                setMovie({ ...movie, Description: e.target.value });
+              }}
+            />
+          </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicYear">
             <Form.Label>Year</Form.Label>
             <Form.Control
-              required
               type="text"
               onChange={(e) => {
                 setMovie({ ...movie, Year: e.target.value });
@@ -71,7 +79,6 @@ function AddMovieModal({ setModalShow, modalShow, categories }) {
             <div className="row">
               <div className={movie.Poster ? "col-sm-8" : ""}>
                 <Form.Control
-                  required
                   type="text"
                   onChange={(e) => {
                     setMovie({ ...movie, Poster: e.target.value });
@@ -86,6 +93,28 @@ function AddMovieModal({ setModalShow, modalShow, categories }) {
                 }
               >
                 <img src={movie.Poster} alt="" />
+              </div>
+            </div>
+          </Form.Group>
+          <Form.Group className="mb-3 " controlId="formBasicTrailer">
+            <Form.Label>Trailer</Form.Label>
+            <div className="row">
+              <div className="">
+                <Form.Control
+                  type="text"
+                  onChange={(e) => {
+                    setMovie({ ...movie, Trailer: e.target.value });
+                  }}
+                />
+              </div>
+              <div
+                className={
+                  movie.Trailer ? " d-flex justify-content-center" : "d-none"
+                }
+              >
+                <video className="p-3" controls autoPlay={false}>
+                  <source src={movie.Trailer} type="video/mp4" />
+                </video>
               </div>
             </div>
           </Form.Group>
@@ -104,12 +133,12 @@ function AddMovieModal({ setModalShow, modalShow, categories }) {
       </Modal.Body>
       <Modal.Footer>
         <div className="me-auto">
-        <Button className="bg-green mx-2" type="submit" form="movieform">
-          Save
-        </Button>
-        <Button className="bg-red " onClick={handleClose}>
-          Close
-        </Button>
+          <Button className="bg-green mx-2" type="submit" form="movieform">
+            Save
+          </Button>
+          <Button className="bg-red " onClick={handleClose}>
+            Close
+          </Button>
         </div>
       </Modal.Footer>
     </Modal>
