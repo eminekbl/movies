@@ -1,34 +1,20 @@
 import React, { useState, useEffect } from "react";
-import {
-  Button,
-  Card,
-  Form,
-  FormControl,
-} from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 import { useHistory } from "react-router";
-import { get, post } from "../api";
-
+import { get } from "../api";
+import { GlobalState } from "../context/GlobalState";
 import AddMovieModal from "../components/AddMovieModal";
+import SearchMovie from "../components/SearchMovie";
 
 function Home() {
+  const GlobalContextAPI = React.useContext(GlobalState);
+
   const [modalShow, setModalShow] = useState(false);
   const [movies, setMovies] = useState([]);
   const [className, setClassName] = useState("");
-  const [search, setSearch] = useState("");
 
   const [movieFilter, setMovieFilter] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
-
-  const [categories, setCategories] = useState([
-    "Drama",
-    "Romance",
-    "Western",
-    "Adventure",
-    "Action",
-    "Sci-Fi",
-    "Crime",
-    "Biography",
-  ]);
 
   let history = useHistory();
 
@@ -37,6 +23,7 @@ function Home() {
       let data = await get("");
       setMovies(data);
       setFilteredData(data);
+      console.log(data);
     }
     fetchMovies();
   }, [modalShow]);
@@ -72,12 +59,6 @@ function Home() {
     } else {
       setClassName("");
     }
-  };
-
-  const handleSearch = (value) => {
-    setSearch(value);
-    let selected = filteredData.filter((item) => item.Title.includes(value));
-    setFilteredData(selected);
   };
 
   const titleUpperCase = (title) => {
@@ -117,31 +98,29 @@ function Home() {
         <div
           className={`home-sidebar col-md-3 order-1 order-md-2 text-center ${className}`}
         >
-          <Form className="">
-            <FormControl
-              type="search"
-              placeholder="Search"
-              value={search}
-              className=""
-              aria-label="Search"
-              onChange={(e) => handleSearch(e.target.value.toLowerCase())}
-            />
-          </Form>
+          {
+            //Filmi ismi ile aratma
+            SearchMovie(filteredData, setFilteredData, movies)
+          }
+
           <div className="row filter-label-row mt-3">
-            {categories.map((item, index) => (
-              <label
-                key={index}
-                className="col-md-6 col-sm-3 col-6 white filter-label"
-              >
-                <input
-                  className="mx-1"
-                  onChange={(e) => handleFilter(e)}
-                  type="checkbox"
-                  value={item}
-                />
-                {item}
-              </label>
-            ))}
+            {
+              //Filmleri kategori ile filtreleme
+              GlobalContextAPI.categories.map((item, index) => (
+                <label
+                  key={index}
+                  className="col-md-6 col-sm-3 col-6 white filter-label"
+                >
+                  <input
+                    className="mx-1"
+                    onChange={(e) => handleFilter(e)}
+                    type="checkbox"
+                    value={item}
+                  />
+                  {item}
+                </label>
+              ))
+            }
           </div>
           <Button
             className="add-movie-button mb-2 mt-4"
@@ -156,7 +135,7 @@ function Home() {
         <AddMovieModal
           setModalShow={setModalShow}
           modalShow={modalShow}
-          categories={categories}
+          categories={GlobalContextAPI.categories}
         />
       </div>
     </div>

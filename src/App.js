@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/main.css"
 import data from "./router/data";
 import NavBar from "./components/NavBar";
+import { Context } from "./context/GlobalState";
 function App() {
   
   const routeMaps = data.map((item, index) => (
@@ -21,6 +22,7 @@ function App() {
   ));
   return (
     <Router>
+       <Context>
       <NavBar links={data} />
       <Switch>
         {routeMaps}
@@ -28,6 +30,7 @@ function App() {
           <Redirect to="/404" />
         </Route>
       </Switch>
+      </Context>
     </Router>
   );
 }

@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Button, Form } from "react-bootstrap";
 import { useHistory } from "react-router";
-import { confirmAlert } from 'react-confirm-alert';
-import 'react-confirm-alert/src/react-confirm-alert.css';
+import { confirmAlert } from "react-confirm-alert";
+import { GlobalState } from "../context/GlobalState";
 
+import "react-confirm-alert/src/react-confirm-alert.css";
 
 import { get, put, remove } from "../api";
 
 function Edit() {
+  const GlobalContextAPI = React.useContext(GlobalState);
   let history = useHistory();
   const params = useParams();
   const { id } = params;
@@ -30,33 +32,48 @@ function Edit() {
   }
   async function handleDelete() {
     confirmAlert({
-      title: 'Confirm to delete',
-      message: 'Are you sure to delete this movie?',
+      title: "Confirm to delete",
+      message: "Are you sure to delete this movie?",
       buttons: [
         {
-          label: 'Yes',
-          onClick: async() => {
+          label: "Yes",
+          onClick: async () => {
             await remove(id);
             history.push(`/`);
-          }
+          },
         },
         {
-          label: 'No',
-          // onClick: () => alert('Click No')
-        }
-      ]
+          label: "No",
+        },
+      ],
     });
-  
   }
+  const handleCategory = (e) => {
+    let selected;
+    if (e.target.checked) {
+      movie.Category
+        ? (selected = movie.Category + "," + e.target.value)
+        : (selected = e.target.value);
+      setMovie((prevState) => ({ ...prevState, Category: selected }));
+    } else {
+      selected = movie.Category.split(",").filter(
+        (item) => item !== e.target.value
+      );
+
+      setMovie((prevState) => ({
+        ...prevState,
+        Category: selected.toString(),
+      }));
+    }
+  };
 
   return (
     <div className="container-fluid edit-page">
       <div className="row p-2 m-0 d-flex justify-content-center align-items-center">
         <div className="col-md-5  d-flex justify-content-center">
           <img className="edit-poster" src={movie.Poster} alt="" />
-          {console.log(movie.Poster)}
         </div>
-        <div className="col-md-7  white ">
+        <div className="col-md-7 white">
           <Form onSubmit={(e) => handleSubmit(e)}>
             <Form.Group className="mb-3" controlId="formBasicTitle">
               <Form.Label>Title</Form.Label>
@@ -90,29 +107,33 @@ function Edit() {
                 }}
               />
             </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formBasicCategory">
-              <Form.Label>Category</Form.Label>
-              <Form.Control
-                type="text"
-                value={movie.Category}
-                onChange={(e) => {
-                  setMovie({ ...movie, Category: e.target.value });
-                }}
-              />
-              
-            </Form.Group>
-
+            <div className="row filter-label-row mt-3">
+              {GlobalContextAPI.categories.map((item, index) => (
+                <label
+                  key={index}
+                  className="col-md-6 col-sm-3 col-6 white filter-label"
+                >
+                  <input
+                    className="mx-1"
+                    onChange={(e) => handleCategory(e)}
+                    type="checkbox"
+                    value={item}
+                    checked={
+                      movie.Category ? movie.Category.includes(item) : false
+                    }
+                  />
+                  {item}
+                </label>
+              ))}
+            </div>
             <Button
-              className="edit-button-save"
-              variant="primary"
+              className="edit-button-save mt-3 bg-green bg-red"
               type="submit"
             >
               Save
             </Button>
             <Button
-              className="edit-button-delete me-3"
-              variant="danger"
+              className="edit-button-delete me-3 mt-3"
               onClick={() => handleDelete()}
             >
               Delete Movie
